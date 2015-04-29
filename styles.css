@@ -1,0 +1,33 @@
+.chai{
+  background: #7d0097;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+
+.chai > .header {
+  
+  background: #c274d2;
+  text-align: red;
+  padding: 10px;
+  border-bottom: 2px dotted #ae9f9f;
+}
+
+.chai > .header > h4 {
+  text-align: center;
+}
+
+.chai > .createTask {
+  padding: 10px;
+  color: black;
+}
+
+.task{
+  padding: 10px;
+  margin: 10px;
+  background: #c337df;
+  border-radius: 5px;
+}
+

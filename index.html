@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  
+  <body ng-app="app">
+    <div ng-controller= "mainCtrl" class="container">
+      <div class="row">
+        <div class="chai">
+          <div class="header">
+            <h4>Dobavit zadanie</h4>
+          </div>
+          <div class="createTask">
+            <input type="text" ng-model="newTask.content" class="form-control" />
+            <select ng-model="newTask.priority">
+              <option>High</option>
+              <option>Low</option>
+              <option>Middle</option>
+            </select>
+            <a class="btn btn-success" ng-click="addTask()">Dobavit</a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="chai">
+            <div class="header">
+              <h4>Actual</h4>
+            </div>
+              <div class = "task" ng-repeat="task in tasks">
+                <strong ng-bind="task.content"></strong>
+                <span ng-bind="task.priority"></span>
+                <a class="btn btn-success btn-xs" ng-click="toArchive($index)">Viplonit</a>
+                <a class="btn btn-danger btn-xs" ng-click="deleteTask($index)">Udalit</a>
+              </div>
+
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="chai">
+            <div class="header">
+              <h4>Archive</h4>
+            </div>
+            <div class = "task" ng-repeat="task in archiveTasks">
+              <strong ng-bind="task.content"></strong>
+              <span ng-bind="task.priority"></span>
+                <a class="btn btn-danger btn-xs" ng-click="deleteTaskFromArchive($index)">Udalit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
